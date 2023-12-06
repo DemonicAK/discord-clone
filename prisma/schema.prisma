@@ -15,6 +15,7 @@ model Profile {
   imageUrl String @db.Text
   email String @db.Text
 
+  servers Server[] 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -28,9 +29,32 @@ model Server{
   inviteCode String @db.Text
   // ip String @db.Text
   // port Int
-  // createdAt DateTime @default(now())
-  // updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   profileId String
   profile Profile @relation(fields: [profileId], references: [id],onDelete: Cascade)
+
+  @@index([profileId], name: "profileId")  // different from video
+}
+enum MemberRole {
+  ADMIN
+  MOERATOR
+  GUEST
+}
+
+model Member {
+  id   String    @id @default(uuid())
+  role MemberRole
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  profileId String
+  profile Profile @relation(fields: [profileId], references: [id],onDelete: Cascade)
+
+  serverId String
+  server Server @relation(fields: [serverId], references: [id],onDelete: Cascade)
+
+  @@index([profileId], name: "profileId")  // different from video
+  @@index([serverId], name: "serverId")  // different from video
 }
