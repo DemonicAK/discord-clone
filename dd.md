@@ -2,10 +2,9 @@
 
 ![Copy of Copy of Copy of Fullstack Twitter Clone (5)](https://github.com/AntonioErdeljac/next13-discord-clone/assets/23248726/14e25e4f-eb83-44dd-8b97-4f2666b89386)
 
-
 This is a repository for Fullstack Discord Clone: Next.js 13, React, Socket.io, Prisma, Tailwind, MySQL | Full Course 2023
 
-[VIDEO TUTORIAL](https://www.youtube.com/watch?v=ZbX4Ok9YX94)
+<!-- [VIDEO TUTORIAL](https://www.youtube.com/watch?v=ZbX4Ok9YX94) -->
 
 Features:
 
@@ -45,7 +44,6 @@ npm i
 
 ### Setup .env file
 
-
 ```js
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
 CLERK_SECRET_KEY=
@@ -68,7 +66,7 @@ NEXT_PUBLIC_LIVEKIT_URL=
 ### Setup Prisma
 
 Add MySQL Database (I used PlanetScale)
-
+ 
 ```shell
 npx prisma generate
 npx prisma db push
@@ -85,6 +83,6 @@ npm run dev
 
 Running commands with npm `npm run [command]`
 
-| command         | description                              |
-| :-------------- | :--------------------------------------- |
-| `dev`           | Starts a development instance of the app |
+| command | description                              |
+| :------ | :--------------------------------------- |
+| `dev`   | Starts a development instance of the app |
